@@ -10,6 +10,9 @@ namespace lve {
             Window(int w, int h, std::string name);
             ~Window();
 
+            Window(const Window &) = delete;
+            Window &operator=(const Window &) = delete;
+
             bool shouldClose() { return glfwWindowShouldClose(window); }
 
         private:
