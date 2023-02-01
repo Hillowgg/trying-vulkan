@@ -6,7 +6,7 @@
 #include <string>
 
 namespace lve {
-    class Window {
+    class  Window {
         public:
             Window(int w, int h, std::string name);
             ~Window();
@@ -15,6 +15,7 @@ namespace lve {
             Window &operator=(const Window &) = delete;
 
             bool shouldClose() { return glfwWindowShouldClose(window); }
+            void createWindowSurface(VkInstance instance, VkSurfaceKHR *surface);
 
         private:
             void initWindow();
